@@ -23,6 +23,7 @@ io.sockets.on('connection', function (socket) {
 		console.log('userjoined room');
 		socket.room = '/public';
 		socket.join('/public');
+	}
 	});
 	// when the client emits 'adduser', this listens and executes
 	socket.on('adduser', function(roomaddress,username,issue,roomstatus){
