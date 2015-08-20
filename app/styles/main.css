@@ -7,24 +7,48 @@
 
 /* Space out content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  height: 100%;
+  width: 100%;
+}
+html
+{
+  height: 100%;
+  width: 100%;
 }
 
 /* For box layout */
 .box
 {
-  height: 22%;
   width: 100%;
   margin-top: 1%;
   margin-bottom: 1%;
+  background-color: pink;
 }
 .container
 {
+  height: 100%;
+  width: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  border: 1px,solid,lightcoral;
+  border: 1px solid lightcoral;
+}
+#titlebox
+{
+  flex-grow:2;
+}
+#inputinfobox
+{
+  flex-grow:2;
+}
+#infobox
+{
+  flex-grow:2;
+}
+#advertbox
+{
+  flex-grow:1;
 }
