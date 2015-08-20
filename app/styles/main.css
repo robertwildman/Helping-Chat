@@ -21,7 +21,7 @@ html
 {
   width: 100%;
   margin-top: 1%;
-  margin-bottom: 1%;
+  margin-bottom:2%;
   background-color: pink;
 }
 .container
@@ -30,25 +30,19 @@ html
   width: 100%;
   text-align: center;
   display: flex;
+  align-content: center;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
   border: 1px solid lightcoral;
 }
 #titlebox
 {
-  flex-grow:2;
-}
-#inputinfobox
-{
-  flex-grow:2;
-}
-#infobox
-{
-  flex-grow:2;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  flex-grow:10;
 }
 #advertbox
 {
+  height: 50px;
+  margin-bottom: 0;
   flex-grow:1;
 }
