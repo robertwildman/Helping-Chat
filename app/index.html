@@ -10,7 +10,7 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
     <script type="text/javascript">var switchTo5x=true;</script>
-    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript" src="//w.sharethis.com/button/buttons.js"></script>
     <script type="text/javascript">stLight.options({publisher: "ad0d060b-6ff5-4889-bd4a-694894a475a0", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
     <!-- endbower -->
     <!-- endbuild -->
@@ -19,7 +19,7 @@
     <!-- endbuild -->
   </head>
   <body class="Site">
-    <link href='http://fonts.googleapis.com/css?family=Cookie|Roboto:400,100,300' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Cookie|Roboto:400,100,300' rel='stylesheet' type='text/css'>
     <script  src="/bower_components/jquery/dist/jquery.min.js"></script>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -27,8 +27,7 @@
     <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
     <script>
 
-  //var socket = io.connect('http://helpingchatbackend.herokuapp.com');
-  var socket = io.connect('http://localhost:8080');
+  var socket = io.connect('https://helpingchat.com');
 
   // on connection to server, ask for user's name with an anonymous callback
   socket.on('connect', function(){
