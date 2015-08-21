@@ -16,13 +16,45 @@ html
   width: 100%;
 }
 
+
+.brand
+{
+  font-size: 6em;
+  font-weight: 400;
+  color:#fb8521;
+  font-family: 'Cookie', cursive;
+}
+.subtitle
+{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 1.150em;
+  max-width: 450px;
+  margin: 0 auto;
+  margin-bottom: 3%;
+}
+.usernameinput
+{
+  margin: 0 auto;
+  width: 400px;
+  margin-bottom: 1%;
+}
+.submitbuttongroup
+{
+  width:400px;
+  margin: 0 auto;
+  margin-bottom: 4%;
+}
+.socialshare
+{
+  margin-bottom: 2%;
+}
 /* For box layout */
 .box
 {
   width: 100%;
   margin-top: 1%;
   margin-bottom:2%;
-  background-color: pink;
 }
 .container
 {
@@ -32,7 +64,13 @@ html
   display: flex;
   align-content: center;
   flex-direction: column;
-  border: 1px solid lightcoral;
+}
+.mainboxcontainer
+{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
 }
 #titlebox
 {
@@ -42,7 +80,29 @@ html
 }
 #advertbox
 {
-  height: 50px;
-  margin-bottom: 0;
+  margin-bottom: 2%;
   flex-grow:1;
 }
+
+@media only screen and (max-device-width: 480px) {
+  .brand
+  {
+    margin-top: -30%;
+  }
+.usernameinput
+{
+  width: 100%;
+}
+.submitbuttongroup
+{
+  width:100%;
+}
+.subtitle
+{
+  width:100%;
+}
+.adsbygoogle
+{
+  height:50px;
+}
+  }
