@@ -36,7 +36,8 @@
   },
   "scripts": {
     "test": "gulp test",
-    "start": "node backend.js"
+    "start": "node backend.js",
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "eslintConfig": {
     "env": {
