@@ -37,7 +37,6 @@
   "scripts": {
     "test": "gulp test",
     "start": "node backend.js"
-}
   },
   "eslintConfig": {
     "env": {
