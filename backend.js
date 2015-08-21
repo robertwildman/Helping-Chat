@@ -9,14 +9,13 @@ console.log("Listening on port" + port);
 server.listen(port);
 
 // routing
+app.use(express.static(__dirname +'/app'));
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.get('/', function (req, res) {
-  res.sendfile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/app/index.html');
 });
 
-
-
-
-//ALl socket.io infomation
+//All socket.io infomation
 io.sockets.on('connection', function (socket) {
 
 	socket.on('newuser', function() {
