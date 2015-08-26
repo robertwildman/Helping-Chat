@@ -1,2 +1,1 @@
-// jshint devel:true
-console.log('\'Allo \'Allo!');
+//This is the main css for the chat.html

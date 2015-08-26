@@ -9,9 +9,6 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
-    <script type="text/javascript">var switchTo5x=true;</script>
-    <script type="text/javascript" src="//w.sharethis.com/button/buttons.js"></script>
-    <script type="text/javascript">stLight.options({publisher: "ad0d060b-6ff5-4889-bd4a-694894a475a0", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -19,41 +16,30 @@
     <!-- endbuild -->
   </head>
   <body class="Site">
+    <!-- Facebook SDK -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1660889220864157',
+          xfbml      : true,
+          version    : 'v2.4'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- End Facebook SDK -->
     <link href='//fonts.googleapis.com/css?family=Cookie|Roboto:400,100,300' rel='stylesheet' type='text/css'>
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
-    <script>
-
-  var socket = io.connect('https://helpingchat.herokuapp.com');
-
-  // on connection to server, ask for user's name with an anonymous callback
-  socket.on('connect', function(){
-    // call the server-side function 'adduser' and send one parameter (value of prompt)
-     socket.emit('newuser');;
-  });
-   socket.on('replytonewuser', function(){
-    //When a user joins a chat a need to reply
-    socket.emit('replynewuser', $('#issue').text());
-  });
-  // listener, whenever the server emits 'updatechat', this updates the chat body
-  socket.on('updatechat', function (username, data) {
-    alert('data')
-     $('<li></li>').html(username + ": " + data).appendTo('#chat');
-    document.getElementById("chat").scrollTop = document.getElementById("chat").scrollHeight;
-    });
-  function switchRoom(room){
-    socket.emit('switchRoom', room);
-  }
-  $(document).ready(function() {
-    $("#btnSubmit").click(function(){
-        socket.emit('sendchat','Testing');
-    });
-});
-
-  </script>
     <div class="container">
       <div class="box mainboxcontainer" id="titlebox">
           <span class="brand"> Helping Chat </span>
@@ -64,13 +50,16 @@
           <div class="btn-group-lg submitbuttongroup" role="group">
             <button type="button" class="btn btn-default submitbutton">Start Chatting</button>
           </div>
-          <span class="subtitle">This website was created by @Robertwildman</span>
+          <span class="socialinfo">This website was created by <a href="https://twitter.com/robertwildman">@Robertwildman</a></span>
+          <span class="socialinfo">Please Share to help your followers!</span>
           <div class="socialshare">
-            <span class='st_facebook_hcount' displayText='Facebook'></span>
-            <span class='st_twitter_hcount' displayText='Tweet'></span>
-            <span class='st_tumblr_hcount' displayText='Tumblr'></span>
-            <span class='st__hcount' displayText=''></span>
-          </div>
+              <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://helpingchat.com" data-text="If your feeling down or want to talk with someone this website can help:" data-via="helpingchat" data-related="robertwildman">Tweet</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+              <div class="fb-share-button" data-href="http://helpingchat.com/" data-layout="button_count"></div>
+              <div class="fb-send" data-href="http://helpingchat.com/"></div>
+              <a class="tumblr-share-button" data-color="blue" data-notes="right" href="https://embed.tumblr.com/share"></a>
+              <script>!function(d,s,id){var js,ajs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://secure.assets.tumblr.com/share-button.js";ajs.parentNode.insertBefore(js,ajs);}}(document, "script", "tumblr-js");</script>
+            </div>
         </ul>
        </div>
       <div class="box" id="advertbox">

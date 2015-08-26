@@ -9,6 +9,7 @@
 body {
   height: 100%;
   width: 100%;
+  background-color: #F9F9F9;
 }
 html
 {
@@ -45,9 +46,14 @@ html
   margin: 0 auto;
   margin-bottom: 4%;
 }
-.socialshare
+.socialinfo
 {
-  margin-bottom: 2%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 1.150em;
+  margin-bottom: 10px;
+  max-width: 450px;
+  margin: 0 auto;
 }
 /* For box layout */
 .box
@@ -89,6 +95,12 @@ html
   {
     margin-top: -30%;
   }
+#titlebox
+{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  height: 90%;
+}
 .usernameinput
 {
   width: 100%;
@@ -101,8 +113,8 @@ html
 {
   width:100%;
 }
-.adsbygoogle
+#advertbox
 {
-  height:50px;
+  height: 50px;
 }
   }

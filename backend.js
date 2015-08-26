@@ -1,5 +1,7 @@
 //This file will be the backend of the chat room
 //It will be running on node js
+var freerooms = [];
+var takenrooms = [];
 var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
@@ -9,55 +11,47 @@ console.log("Listening on port" + port);
 server.listen(port);
 
 // routing
+app.set('views', './app');
+app.set('view engine', 'jade');
 app.use(express.static(__dirname +'/app'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/app/index.html');
 });
+app.get('/chat', function (req, res) {
+  res.sendFile(__dirname + '/app/index.html');
+});
+// POST method route
+app.post('/chat', function (req, res) {
+  res.render('chat', { name: req.body.username });
+});
 
 //All socket.io infomation
 io.sockets.on('connection', function (socket) {
 
-	socket.on('newuser', function() {
-		console.log('userjoined room');
-		socket.room = '/public';
-		socket.join('/public');
-	});
-	// when the client emits 'adduser', this listens and executes
-	socket.on('adduser', function(roomaddress,username,issue,roomstatus){
-	socket.room = roomaddress;
-	socket.username = username;
-	socket.issue = issue;
-	socket.join(roomaddress);
-	if(roomstatus == false){
-		//This means that the user is alone in the room.
-		socket.emit('helpingchatmessage','You are waiting for a user to join');
-	}else{
-		//This means the user is not alone in the room.
-		socket.broadcast.to(socket.room).emit('helpingchatmessage', socket.username+' has joined this room');
-		socket.broadcast.to(socket.room).emit('helpingchatmessage', 'Their issue is ' + issue);
-		socket.broadcast.to(socket.room).emit('replytonewuser');
-	}
-});
+	socket.on('newroom', function(username){
+		//This is called when a user wants to join a new room
+		//Setting up the values
+		socket.username = username;
 
-	// when the client emits 'sendchat', this listens and executes
-	socket.on('sendchat', function (data) {
-		console.log('Message being sent');
-		// we tell the client to execute 'updatechat' with 2 parameters
-		socket.emit('updatechat', 'nothing', data);
-	});
-	socket.on('updatename', function(newname)
-	{
-		socket.username = newname;
-	});
-	socket.on('updateissue', function(newissue)
-	{
-		socket.issue = newissue;
-	});
-	socket.on('replynewuser', function(issue)
-	{
-		socket.broadcast.to(socket.room).emit('helpingchatmessage', socket.username + ' has joined this room');
-		socket.broadcast.to(socket.room).emit('helpingchatmessage', 'Their issue is ' + issue);
+		//Checks the array to see if its empty
+		if(freerooms.length = 0)
+		{
+			//No one is waiting
+			socket.room = getrandomroom();
+			freerooms.push(socket.room);
+			socket.join('/'+socket.room);
+			socket.emit('nouser');
+		}
+		else
+		{
+			//We have someone.
+			socket.room = freerooms[0];
+			freerooms.splice(0, 1);
+			socket.join('/'+socket.room);
+			takenrooms.push(socket.room);
+			socket.broadcast.to(socket.room).emit('userjoined');
+		}
 	});
 	socket.on('switchRoom', function(newroom,issue,roomstatus){
 		// leave the current room (stored in session)
@@ -90,3 +84,16 @@ io.sockets.on('connection', function (socket) {
 		//Send a request to the server to delete the user from db
 	});
 });
+
+function getrandomroom()
+{
+	var randomnumber = Math.floor(Math.random()*10000000);
+	if(takenrooms.indexOf(randomnumber) > -1 ))
+	{
+		return getrandomroom();
+	}
+	else
+	{
+		return randomnumber;
+	}
+}

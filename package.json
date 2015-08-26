@@ -55,6 +55,7 @@
   "dependencies": {
     "express": "^4.13.1",
     "socket.io": "~0.9.6",
-    "bower": "latest"
+    "bower": "latest",
+    "ejs": "^0.7.1"
   }
 }
