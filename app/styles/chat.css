@@ -35,7 +35,7 @@ html
   clear: both;
   font-family: 'Cookie', cursive;
 }
-.afterchat
+#afterchat
 {
   width: 100%;
   height: 100%;
@@ -47,7 +47,7 @@ html
   margin-top: 40px;
   width: 40%;
 }
-.prechat
+#prechat
 {
   width: 100%;
   height: 100%;

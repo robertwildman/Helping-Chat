@@ -7,7 +7,7 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var port = process.env.PORT || 8080;
-console.log("Listening on port" + port);
+console.log("Listening on port " + port);
 server.listen(port);
 
 // routing
@@ -29,19 +29,20 @@ app.post('/chat', function (req, res) {
 //All socket.io infomation
 io.sockets.on('connection', function (socket) {
 
-	socket.on('newroom', function(username){
+	//When user joins and wants a room.
+	socket.on('newuser', function(username){
 		//This is called when a user wants to join a new room
 		//Setting up the values
 		socket.username = username;
 
 		//Checks the array to see if its empty
-		if(freerooms.length = 0)
+		if(freerooms.length == 0)
 		{
 			//No one is waiting
 			socket.room = getrandomroom();
 			freerooms.push(socket.room);
 			socket.join('/'+socket.room);
-			socket.emit('nouser');
+			socket.emit('roomempty');
 		}
 		else
 		{
@@ -50,39 +51,44 @@ io.sockets.on('connection', function (socket) {
 			freerooms.splice(0, 1);
 			socket.join('/'+socket.room);
 			takenrooms.push(socket.room);
-			socket.broadcast.to(socket.room).emit('userjoined');
+			socket.broadcast.to(socket.room).emit('userjoin');
 		}
 	});
-	socket.on('switchRoom', function(newroom,issue,roomstatus){
-		// leave the current room (stored in session)
-		socket.leave(socket.room);
-		// join new room, received as function parameter
-		socket.join(newroom);
-		socket.emit('helpingchatmessage', 'You have connected to '+ newroom);
-		// sent message to OLD room
-		socket.broadcast.to(socket.room).emit('helpingchatmessage', socket.username+' has left this room');
-		// update socket session room title
-		socket.room = newroom;
-		if(roomstatus == false)
-		{
-			//This means that the user is alone in the room.
-			socket.emit('helpingchatmessage', 'You are waiting for a user to join');
-		}else{
-			//This means the user is not alone in the room.
-			socket.broadcast.to(socket.room).emit('helpingchatmessage', socket.username+' has joined this room');
-			socket.broadcast.to(socket.room).emit('helpingchatmessage', 'Their issue is ' + issue);
-			socket.broadcast.to(socket.room).emit('replytonewuser');
+	//When the user is leaving a room.
+	socket.on('userleaving', function(){
+		//Tells old user that this user has left and then emits leaving function
+		socket.broadcast.to('/'+socket.room).emit('systemmessage', 'User has left.');
+		socket.broadcast.to('/'+socket.room).emit('userleft');
+		socket.leave('/'+socket.room);
+		//Removes the room from the taken list.
+		var index = takenrooms.indexOf(socket.room);
+		if (index > -1) {
+		    takenrooms.splice(index, 1);
 		}
-
 	});
-
-	// when the user disconnects.. perform this
+	//When the user disconnects
 	socket.on('disconnect', function(){
-		// echo globally that this client has left
-		socket.broadcast.to(socket.room).emit('helpingchatmessage', 'User has left.');
-		socket.leave(socket.room);
-		//Send a request to the server to delete the user from db
+		//Tells old user that this user has left and then emits leaving function
+		socket.broadcast.to('/'+socket.room).emit('systemmessage', 'User has left.');
+		socket.broadcast.to('/'+socket.room).emit('userleft');
+		socket.leave('/'+socket.room);
+		//Removes the room from the taken list.
+		var index = takenrooms.indexOf(socket.room);
+		if (index > -1) {
+		    takenrooms.splice(index, 1);
+		}
 	});
+	socket.on('sendsystemmessage', function(message)
+	{
+		ssocket.broadcast.to('/'+socket.room).emit('systemmessage',message);
+	});
+	socket.on('sendmessage', function(message)
+	{
+		ssocket.broadcast.to('/'+socket.room).emit('message',message);
+	});
+
+
+
 });
 
 function getrandomroom()
