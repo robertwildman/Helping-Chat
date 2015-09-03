@@ -7,8 +7,8 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var port = process.env.PORT || 8080;
-console.log("Listening on port " + port);
-server.listen(port);
+console.log("Listening on port " + process.env.PORT || 8080);
+server.listen(process.env.PORT || 8080);
 
 // routing
 app.set('views', './app');
