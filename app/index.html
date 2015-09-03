@@ -36,19 +36,20 @@
     </script>
     <!-- End Facebook SDK -->
     <link href='//fonts.googleapis.com/css?family=Cookie|Roboto:400,100,300' rel='stylesheet' type='text/css'>
+    <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="container">
+    <div class="indexcontainer">
       <div class="box mainboxcontainer" id="titlebox">
           <span class="brand"> Helping Chat </span>
           <span class="subtitle">A Website that allows you to chat through anything thats causing you issues or making you unhappy while also helping someone else talk about their issues.</span>
           <div class="input-group-lg usernameinput">
-            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" id="usernameinput">
           </div>
           <div class="btn-group-lg submitbuttongroup" role="group">
-            <button type="button" class="btn btn-default submitbutton">Start Chatting</button>
+            <button type="button" class="btn btn-default submitbutton" id="startchatbutton">Start Chatting</button>
           </div>
           <span class="socialinfo">This website was created by <a href="https://twitter.com/robertwildman">@Robertwildman</a></span>
           <span class="socialinfo">Please Share to help your followers!</span>
@@ -75,7 +76,75 @@
         </script>
       </div>
     </div>
+    <div class="chatcontainer">
+        <h2 style="display:none;" id="username"><%=name %></h2>
+        <span class="mainchatbrand"> Helping Chat </span>
+        <div class="btn-group-lg submitbuttongroup" role="group">
+            <button type="button" class="btn btn-default submitbutton" id="endchatbutton">End chat</button>
+        </div>
 
+        <div class="chatgoogleadvert">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <!-- Chat Upper -->
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-2049126681125303"
+               data-ad-slot="7717403273"
+               data-ad-format="auto"></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+          </div>
+          <div class="chatroom">
+            <div class="chatholder">
+              <ul id="chat">
+              </ul>
+              <div id="prechat">
+                  <span class="chatbrand"> Waiting for a user.... </span>
+                  <div class="quotesprechat">
+                    <span class="chatsubtitle"> While you wait here are some quotes</span>
+                    <ul class="prechatlist">
+                      <li class="chatsubtitle">Quote 1</li>
+                      <li class="chatsubtitle">Quote 2</li>
+                      <li class="chatsubtitle">Quote 3</li>
+                      <li class="chatsubtitle">Quote 4</li>
+                      <li class="chatsubtitle">Quote 5</li>
+                      <li class="chatsubtitle">Quote 6</li>
+                      <li class="chatsubtitle">Quote 7</li>
+                    </ul>
+                  </div>
+              </div>
+              <div id="afterchat">
+                <span class="chatbrand"> Chat has finished, Hopefully your feeling better! </span>
+                <div class="afterchatinfo">
+                  <span class="subtitle">
+                    Feedback is very much welcome, Tweet me <a href="https://twitter.com/robertwildman">@Robertwildman</a> or you can send me a email.
+                    The website is always being updated and made better.
+                  </span>
+                  <br>
+                  <div class="btn-group-lg submitbuttongroup" role="group">
+                    <button type="button" class="btn btn-default submitbutton" id="startnewchatbutton">Not working just yet</button>
+                </div>
+                  <br>
+                  <span class="subtitle">Please remember that sharing can help someone thats going though a hard time!</span>
+                  <div class="socialshare">
+                      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://helpingchat.com" data-text="If your feeling down or want to talk with someone this website can help:" data-via="helpingchat" data-related="robertwildman">Tweet</a>
+                      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                      <div class="fb-share-button" data-href="http://helpingchat.com/" data-layout="button_count"></div>
+                      <div class="fb-send" data-href="http://helpingchat.com/"></div>
+                      <a class="tumblr-share-button" data-color="blue" data-notes="right" href="https://embed.tumblr.com/share"></a>
+                      <script>!function(d,s,id){var js,ajs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://secure.assets.tumblr.com/share-button.js";ajs.parentNode.insertBefore(js,ajs);}}(document, "script", "tumblr-js");</script>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="chatfooter">
+              <div class="input-group-lg messageinput">
+                <input id="messagetextbox"type="text" class="form-control" placeholder="Enter your message" aria-describedby="basic-addon1">
+              </div>
+            </div>
+          </div>
+    </div>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>

@@ -17,6 +17,137 @@ html
   width: 100%;
 }
 
+.chatgoogleadvert
+{
+  width: 50%;
+  height: 85px;
+  margin: 0 auto;
+  display:none;
+}
+
+.mainchatbrand
+{
+  font-size: 5em;
+  font-weight: 400;
+  color:#fb8521;
+  margin-top: -10px;
+  margin-left: 10px;
+  float: left;
+  clear: both;
+  font-family: 'Cookie', cursive;
+}
+#afterchat
+{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.afterchatinfo
+{
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 40%;
+}
+#prechat
+{
+  width: 100%;
+  height: 100%;
+  display:none;
+  text-align: center;
+}
+.quotesprechat
+{
+  margin: 0 auto;
+  width: 40%;
+}
+.prechatlist
+{
+  text-align: left;
+}
+.chatbrand
+{
+  font-size: 4em;
+  font-weight: 400;
+  color:#fb8521;
+  margin:0 auto;
+  font-family: 'Roboto', sans-serif;
+}
+.chatsubtitle
+{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 1.5em;
+  max-width: 450px;
+  margin: 0 auto;
+  margin-bottom: 3%;
+}
+.messageinput
+{
+  margin: 0 auto;
+  width: 100%;
+}
+.submitbuttongroup
+{
+  width:400px;
+  margin: 0 auto;
+  margin-bottom: 4%;
+}
+.socialinfo
+{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 1.150em;
+  padding-bottom: 5px;
+  max-width: 450px;
+  margin: 0 auto;
+}
+.chatcontainer
+{
+  display:none;
+  width:100%;
+  height:100%;
+}
+.hide
+{
+  display:none;
+}
+#chat{
+  display:none;
+   margin-top: 5px;
+  height: 100%;
+  width: 100%;
+  overflow:hidden;
+  overflow-y:scroll;
+}
+.floatright
+{
+  text-align: right;
+  clear:both;
+  padding-right: 10px;
+  width:100%;
+}
+.chatholder
+{
+  margin-top: 5px;
+  margin-bottom: 1px;
+  height: calc(100% - 60px);
+}
+.chatroom
+{
+  position:relative;
+  width: 70%;
+  margin: 0 auto;
+  height: 87%;
+  margin-top: 15px;
+  background-color: white;
+}
+.chatroom .chatfooter
+{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+}
 
 .brand
 {
@@ -62,7 +193,7 @@ html
   margin-top: 1%;
   margin-bottom:2%;
 }
-.container
+.indexcontainer
 {
   height: 100%;
   width: 100%;
@@ -90,11 +221,35 @@ html
   flex-grow:1;
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 700px) {
   .brand
   {
     margin-top: -30%;
   }
+    .chatbrand
+  {
+   display: none;
+  }
+.submitbuttongroup
+{
+  width:100%;
+}
+.chatsubtitle
+{
+  width:100%;
+}
+.chatroom
+{
+  width:100%;
+  margin-top: 5px;
+  height: 87%;
+}
+.chatgoogleadvert
+{
+  height: 10%;
+  width:100%;
+  background-color: blue;
+}
 #titlebox
 {
   margin-top: 5%;
