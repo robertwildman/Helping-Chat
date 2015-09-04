@@ -73,7 +73,9 @@
 		//Will now display post infomation to the server
 		socket.emit('newuser',$('#usernameinput').val());
 		$('.indexcontainer').fadeOut(function(){
-		$('.chatcontainer').fadeIn(); });
+		$('.chatcontainer').fadeIn();
+		$('#chatadvert').html('<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <!-- Chat Upper --> <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2049126681125303" data-ad-slot="5344726070" data-ad-format="auto"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>');
+		});
 		$('#username').html($('#usernameinput').val());
 
 	});

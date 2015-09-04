@@ -319,7 +319,7 @@ html
   margin-bottom: 5%;
   flex-grow:10;
 }
-#advertbox
+.boxadvert
 {
   margin-bottom: 2%;
   flex-grow:1;
@@ -347,6 +347,7 @@ html
   #advertbox
   {
     height: 9%;
+    margin-bottom: 0px;
     width: 100%;
   }
   #titlebox
