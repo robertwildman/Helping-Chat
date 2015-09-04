@@ -313,6 +313,10 @@ html
   align-content: center;
   flex-direction: column;
 }
+.usernameerror
+{
+  display:none;
+}
 #titlebox
 {
   margin-top: 5%;
