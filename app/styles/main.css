@@ -416,10 +416,17 @@ html
   .chatroom
   {
     width:100%;
-    margin-top: 5px;
+    margin-top: 40px;
     margin-left: 0px;
-    height: 87%;
+    height: 100%;
     padding-left: 0px;
+  }
+  .chatroomholder
+  {
+    width:100%;
+    margin-top: 40px;
+    margin-left: 0px;
+    height: calc(100% - 105px);
   }
   #afterchat{
     margin-top: 60px;
@@ -535,8 +542,15 @@ html
     width:100%;
     margin-top: 40px;
     margin-left: 0px;
-    height: calc(100% - 105bpx);
+    height: 100%;
     padding-left: 0px;
+  }
+  .chatroomholder
+  {
+    width:100%;
+    margin-top: 40px;
+    margin-left: 0px;
+    height: calc(100% - 105px);
   }
   #chat{
     padding-left: 0px;
