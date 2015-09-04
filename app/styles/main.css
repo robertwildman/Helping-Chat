@@ -11,8 +11,10 @@
     box-shadow: 0 0 6px #B2B2B2;
     display: inline-block;
     padding: 10px 18px;
+    white-space: pre-wrap;
     position: relative;
     max-width: 85%;
+    max-height: 50%;
     margin-top: 15px;
     clear:both;
     vertical-align: top;
@@ -141,7 +143,7 @@ html
 {
   margin: 0 auto;
   margin-top: 40px;
-  width: 40%;
+  width: 60%;
 }
 #prechat
 {
@@ -180,13 +182,13 @@ html
 }
 #messagetextbox
 {
-  width:84%;
+  width:80%;
   margin:0 auto;
   float:left;
 }
 #endchatbutton
 {
-  max-width: 15%;
+  max-width: 20%;
   float:right;
 }
 .submitbuttongroup
@@ -238,7 +240,8 @@ html
 .chatroom
 {
   position:relative;
-  width: 70%;
+  max-width: 1300px;
+  margin-right: 10px;
   margin-left: 15%;
   height: 87%;
 }
@@ -321,56 +324,120 @@ html
   margin-bottom: 2%;
   flex-grow:1;
 }
+#messagesendbutton
+{
+  display:none;
+}
 
 @media only screen and (max-width: 700px) {
+  /* Frontpage */
   .brand
   {
     margin-top: -30%;
   }
-  .chatbrand
+  .subtitle
+  {
+    width:100%;
+    font-size: 1em;
+  }
+  .socialinfo
+  {
+    font-size: 1em;
+  }
+  #advertbox
+  {
+    height: 9%;
+    width: 100%;
+  }
+  #titlebox
+  {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 80%;
+    flex-grow:1;
+  }
+  /* Chatpage */
+  .mainchatbrand
   {
    display: none;
   }
-.submitbuttongroup
-{
-  width:100%;
-}
-.chatsubtitle
-{
-  width:100%;
-}
-.chatroom
-{
-  width:100%;
-  margin-top: 5px;
-  height: 87%;
-}
-.chatgoogleadvert
-{
-  height: 10%;
-  width:100%;
-  background-color: blue;
-}
-#titlebox
-{
-  margin-top: 5%;
-  margin-bottom: 5%;
-  height: 90%;
-}
-.usernameinput
-{
-  width: 100%;
-}
-.submitbuttongroup
-{
-  width:100%;
-}
-.subtitle
-{
-  width:100%;
-}
-#advertbox
-{
-  height: 50px;
-}
+  .quotesblock
+  {
+    display:none;
   }
+   .chatgoogleadvert
+  {
+    height: 100%;
+    width:100%;
+    background-color: blue;
+  }
+  .chatheader
+  {
+    display:block;
+    width:100%;
+    height: 60px;
+  }
+  #messagetextbox
+  {
+    width:69%;
+  }
+  #messagesendbutton
+  {
+    float:right;
+    display:block;
+    max-width:15%;
+  }
+  #endchatbutton
+  {
+    float:left;
+    max-width: 20%;
+  }
+  .submitbuttongroup
+  {
+    width:100%;
+  }
+  .chatsubtitle
+  {
+    width:100%;
+  }
+  .chatbrand
+  {
+    font-size: 2em;
+  }
+  .chatroom
+  {
+    width:100%;
+    margin-top: 5px;
+    margin-left: 0px;
+    height: 87%;
+    padding-left: 0px;
+  }
+  #chat{
+    padding-left: 0px;
+  }
+  .prechatdesktopinfo
+  {
+    display:none;
+  }
+  .nomobile
+  {
+    display:none;
+  }
+  .afterchatinfo
+  {
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 100%;
+  }
+
+  .usernameinput
+  {
+    width: 100%;
+  }
+  .submitbuttongroup
+  {
+    width:100%;
+  }
+
+
+}

@@ -95,7 +95,15 @@
     });
     $('#prechat').hide();
 	});
-
+	$('#messagesendbutton').click(function(event) {
+		//Will now display post infomation to the server
+        var message = $('#messagetextbox').val();
+        socket.emit('sendmessage',message);
+        $('<li class="bubble user"></li>').html(message).appendTo('#chat');
+     	//Makes sure the scroll keeps working.
+     	document.getElementById("chat").scrollTop = document.getElementById("chat").scrollHeight;
+        $('#messagetextbox').val('');
+	});
 
 $('#messagetextbox').keypress(function(e) {
       if(e.which == 13) {
@@ -109,6 +117,7 @@ $('#messagetextbox').keypress(function(e) {
         $(this).focus();
       }
     });
+
 
 });
 

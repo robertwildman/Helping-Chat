@@ -1,221 +1,221 @@
 <!doctype html>
 <html lang="">
-  <head>
-    <meta charset="utf-8">
-    <title>Helping Chat</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <title>Helping Chat</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-  </head>
-  <body class="Site">
-    <!-- Facebook SDK -->
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1660889220864157',
-          xfbml      : true,
-          version    : 'v2.4'
-        });
-      };
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+<body class="Site">
+  <!-- Facebook SDK -->
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1660889220864157',
+        xfbml      : true,
+        version    : 'v2.4'
+      });
+    };
 
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <!-- End Facebook SDK -->
-    <link href='//fonts.googleapis.com/css?family=Cookie|Roboto:400,100,300' rel='stylesheet' type='text/css'>
-    <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <!-- End Facebook SDK -->
+  <link href='//fonts.googleapis.com/css?family=Cookie|Roboto:400,100,300' rel='stylesheet' type='text/css'>
+  <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="indexcontainer">
+  <div class="indexcontainer">
       <div class="box mainboxcontainer" id="titlebox">
-          <span class="brand"> Helping Chat </span>
-          <span class="subtitle">A Website that allows you to chat through anything thats causing you stress or making you unhappy while also helping someone else talk about their stress or problem.</span>
-          <div class="input-group-lg usernameinput">
-            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" id="usernameinput">
-          </div>
-          <div class="btn-group-lg submitbuttongroup" role="group">
-            <button type="button" class="btn btn-block btn-lg btn-success submitbutton" id="startchatbutton">Start Chatting</button>
-          </div>
-          <span class="socialinfo">This website was created by <a href="https://twitter.com/robertwildman">@Robertwildman</a></span>
-          <span class="socialinfo">Please Share to help your followers!</span>
-          <div class="socialshare">
-              <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.helpingchat.com" data-text="If your feeling down or want to talk with someone this website can help:" data-via="helpingchat" data-related="robertwildman">Tweet</a>
-              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-              <div class="fb-share-button" data-href="http://www.helpingchat.com/" data-layout="button_count"></div>
-              <div class="fb-send" data-href="http://www.helpingchat.com/"></div>
-              <a class="tumblr-share-button" data-color="blue" data-notes="right" href="https://embed.tumblr.com/share"></a>
-              <script>!function(d,s,id){var js,ajs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://secure.assets.tumblr.com/share-button.js";ajs.parentNode.insertBefore(js,ajs);}}(document, "script", "tumblr-js");</script>
-            </div>
-        </ul>
-       </div>
-      <div class="box" id="advertbox">
+        <span class="brand"> Helping Chat </span>
+        <span class="subtitle">A Website that allows you to chat through anything thats causing you stress or making you unhappy while also helping someone else talk about their stress or problem.</span>
+        <div class="input-group-lg usernameinput">
+          <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" id="usernameinput">
+        </div>
+        <div class="btn-group-lg submitbuttongroup" role="group">
+          <button type="button" class="btn btn-block btn-lg btn-success submitbutton" id="startchatbutton">Start Chatting</button>
+        </div>
+        <span class="socialinfo">This website was created by <a href="https://twitter.com/robertwildman">@Robertwildman</a></span>
+        <span class="socialinfo">Please Share to help your followers!</span>
+        <div class="socialshare">
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.helpingchat.com" data-text="If your feeling down or want to talk with someone this website can help:" data-via="helpingchat" data-related="robertwildman">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          <div class="fb-share-button" data-href="http://www.helpingchat.com/" data-layout="button_count"></div>
+          <div class="fb-send" data-href="http://www.helpingchat.com/"></div>
+          <a class="tumblr-share-button" data-color="blue" data-notes="right" href="https://embed.tumblr.com/share"></a>
+          <script>!function(d,s,id){var js,ajs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://secure.assets.tumblr.com/share-button.js";ajs.parentNode.insertBefore(js,ajs);}}(document, "script", "tumblr-js");</script>
+        </div>
+      </ul>
+    </div>
+    <div class="box" id="advertbox">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- Chat Lower -->
+      <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-2049126681125303"
+      data-ad-slot="3966071276"
+      data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+  <div class="chatcontainer">
+    <h2 style="display:none;" id="username"><%=name %></h2>
+    <div class="chatheader">
+      <span class="mainchatbrand"> <a class="nolink" href="/"> Helping Chat </a> </span>
+      <div class="chatgoogleadvert">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Chat Lower -->
+        <!-- Chat Upper -->
         <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-2049126681125303"
-           data-ad-slot="3966071276"
-           data-ad-format="auto"></ins>
+        style="display:block"
+        data-ad-client="ca-pub-2049126681125303"
+        data-ad-slot="7717403273"
+        data-ad-format="auto"></ins>
         <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
       </div>
     </div>
-    <div class="chatcontainer">
-        <h2 style="display:none;" id="username"><%=name %></h2>
-        <div class="chatheader">
-          <span class="mainchatbrand"> <a class="nolink" href="/"> Helping Chat </a> </span>
-          <div class="chatgoogleadvert">
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- Chat Upper -->
-            <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-2049126681125303"
-               data-ad-slot="7717403273"
-               data-ad-format="auto"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            </div>
-        </div>
-<div class="quotesblock">
-                    <ul class="prechatlist" id="quotewall">
-                      <li class="quotebubble">Omg how hot is that girl????
-                        <br>
-                        -Robert Wildman 2k15</li>
-                      <li class="quotebubble">Quote 2</li>
-                      <li class="quotebubble">Quote 3</li>
-                      <li class="quotebubble">Quote 4</li>
-                      <li class="quotebubble">Quote 5</li>
-                      <li class="quotebubble">Quote 6</li>
-                      <li class="quotebubble">Quote 7</li>
-                      <li class="quotebubble">Quote 2</li>
-                      <li class="quotebubble">Quote 3</li>
-                      <li class="quotebubble">Quote 4</li>
-                      <li class="quotebubble">Quote 5</li>
-                      <li class="quotebubble">Quote 6</li>
-                      <li class="quotebubble">Quote 7</li>
-                      <li class="quotebubble">Quote 2</li>
-                      <li class="quotebubble">Quote 3</li>
-                      <li class="quotebubble">Quote 4</li>
-                      <li class="quotebubble">Quote 5</li>
-                      <li class="quotebubble">Quote 6</li>
-                      <li class="quotebubble">Quote 7</li>
-                      <li class="quotebubble">Quote 2</li>
-                      <li class="quotebubble">Quote 3</li>
-                      <li class="quotebubble">Quote 4</li>
-                      <li class="quotebubble">Quote 5</li>
-                      <li class="quotebubble">Quote 6</li>
-                      <li class="quotebubble">Quote 7</li>
-                      <li class="quotebubble">Quote 2</li>
-                      <li class="quotebubble">Quote 3</li>
-                      <li class="quotebubble">Quote 4</li>
-                      <li class="quotebubble">Quote 5</li>
-                      <li class="quotebubble">Quote 6</li>
-                      <li class="quotebubble">Quote 7</li>
+    <div class="quotesblock">
+      <ul class="prechatlist" id="quotewall">
+        <li class="quotebubble">Omg how hot is that girl????
+          <br>
+          -Robert Wildman 2k15</li>
+          <li class="quotebubble">Quote 2</li>
+          <li class="quotebubble">Quote 3</li>
+          <li class="quotebubble">Quote 4</li>
+          <li class="quotebubble">Quote 5</li>
+          <li class="quotebubble">Quote 6</li>
+          <li class="quotebubble">Quote 7</li>
+          <li class="quotebubble">Quote 2</li>
+          <li class="quotebubble">Quote 3</li>
+          <li class="quotebubble">Quote 4</li>
+          <li class="quotebubble">Quote 5</li>
+          <li class="quotebubble">Quote 6</li>
+          <li class="quotebubble">Quote 7</li>
+          <li class="quotebubble">Quote 2</li>
+          <li class="quotebubble">Quote 3</li>
+          <li class="quotebubble">Quote 4</li>
+          <li class="quotebubble">Quote 5</li>
+          <li class="quotebubble">Quote 6</li>
+          <li class="quotebubble">Quote 7</li>
+          <li class="quotebubble">Quote 2</li>
+          <li class="quotebubble">Quote 3</li>
+          <li class="quotebubble">Quote 4</li>
+          <li class="quotebubble">Quote 5</li>
+          <li class="quotebubble">Quote 6</li>
+          <li class="quotebubble">Quote 7</li>
+          <li class="quotebubble">Quote 2</li>
+          <li class="quotebubble">Quote 3</li>
+          <li class="quotebubble">Quote 4</li>
+          <li class="quotebubble">Quote 5</li>
+          <li class="quotebubble">Quote 6</li>
+          <li class="quotebubble">Quote 7</li>
 
-                    </ul>
-            </div>
-
-          <div class="chatroom">
-            <div class="chatholder">
-              <ul id="chat">
-              </ul>
-              <div id="prechat">
-                  <span class="chatbrand"> Waiting for a free user....</span>
-                  <br>
-                  <span class="subtitle prechatdesktopinfo">
-                    While you wait why not read some quotes from the wall of quotes to your left.
-                  </span>
+        </ul>
+    </div>
+    <div class="chatroom">
+        <div class="chatholder">
+          <ul id="chat">
+          </ul>
+          <div id="prechat">
+            <span class="chatbrand"> Waiting for a free user....</span>
+            <br>
+            <span class="subtitle prechatdesktopinfo">
+              While you wait why not read some quotes from the wall of quotes to your left.
+            </span>
+          </div>
+          <div id="afterchat">
+            <span class="chatbrand">Your chat has finished! </span>
+            <div class="afterchatinfo">
+              <span class="subtitle">
+                I hope that your feeling better then you did, If your not then please find a new partner and hopefully they will be able to help you.
+              </span>
+              <br>
+              <span class="subtitle">
+                Feedback is very much welcome, Tweet me <a href="https://twitter.com/robertwildman">@Robertwildman</a> or you can send me a <a href="mailto:robertwildman4@gmail.com?subject=Helping Chat Feedback">email.</a>
+                The website is always being updated and made better.
+              </span>
+              <br>
+              <br>
+              <div class="btn-group-lg submitbuttongroup" role="group">
+                <button type="button" class="btn btn-block btn-lg btn-success submitbutton" id="resetchatbutton">Find new Partner!</button>
               </div>
-              <div id="afterchat">
-                <span class="chatbrand">Your chat has finished! </span>
-                <div class="afterchatinfo">
-                  <span class="subtitle">
-                    I hope that your feeling better then you did, If your not then please find a new partner and hopefully they will be able to help you.
-                  </span>
-                  <br>
-                  <span class="subtitle">
-                    Feedback is very much welcome, Tweet me <a href="https://twitter.com/robertwildman">@Robertwildman</a> or you can send me a <a href="mailto:robertwildman4@gmail.com?subject=Helping Chat Feedback">email.</a>
-                    The website is always being updated and made better.
-                  </span>
-                  <br>
-                  <br>
-                  <div class="btn-group-lg submitbuttongroup" role="group">
-                    <button type="button" class="btn btn-block btn-lg btn-success submitbutton" id="resetchatbutton">Find new Partner!</button>
-                  </div>
-                  <br>
-                  <span class="subtitle">Please remember that sharing can help someone thats going though a hard time!</span>
-                 <div class="socialshare">
-              <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.helpingchat.com" data-text="If your feeling down or want to talk with someone this website can help:" data-via="helpingchat" data-related="robertwildman">Tweet</a>
-              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-              <div class="fb-share-button" data-href="http://www.helpingchat.com/" data-layout="button_count"></div>
-              <div class="fb-send" data-href="http://www.helpingchat.com/"></div>
-              <a class="tumblr-share-button" data-color="blue" data-notes="right" href="https://embed.tumblr.com/share"></a>
-              <script>!function(d,s,id){var js,ajs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://secure.assets.tumblr.com/share-button.js";ajs.parentNode.insertBefore(js,ajs);}}(document, "script", "tumblr-js");</script>
-            </div>
-                </div>
-              </div>
-            </div>
-            <div class="chatfooter">
-              <div class="input-group-lg messageinput">
-                <input id="messagetextbox"type="text" class="form-control" placeholder="Enter your message" aria-describedby="basic-addon1">
-                <button type="button" class="btn btn-lg btn-danger" id="endchatbutton"><span class="glyphicon glyphicon-remove"></span> End Chat</button>
+              <br>
+              <span class="subtitle">Please remember that sharing can help someone thats going though a hard time!</span>
+              <div class="socialshare">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.helpingchat.com" data-text="If your feeling down or want to talk with someone this website can help:" data-via="helpingchat" data-related="robertwildman">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-share-button" data-href="http://www.helpingchat.com/" data-layout="button_count"></div>
+                <div class="fb-send" data-href="http://www.helpingchat.com/"></div>
+                <a class="tumblr-share-button" data-color="blue" data-notes="right" href="https://embed.tumblr.com/share"></a>
+                <script>!function(d,s,id){var js,ajs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://secure.assets.tumblr.com/share-button.js";ajs.parentNode.insertBefore(js,ajs);}}(document, "script", "tumblr-js");</script>
               </div>
             </div>
           </div>
+        </div>
+        <div class="chatfooter">
+          <div class="input-group-lg messageinput">
+            <button type="button" class="btn btn-lg btn-danger" id="endchatbutton"><span class="glyphicon glyphicon-log-out"></span> <span class="nomobile">Leave Chat </span></button>
+            <input id="messagetextbox"type="text" class="form-control" placeholder="Enter your message" aria-describedby="basic-addon1">
+            <button type="button" class="btn btn-lg btn-primary" id="messagesendbutton"><span class="glyphicon glyphicon-send"></span></button>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+      <!-- build:js(.) scripts/vendor.js -->
+      <!-- bower:js -->
+      <script src="/bower_components/jquery/dist/jquery.js"></script>
+      <!-- endbower -->
+      <!-- endbuild -->
 
 
-    <!-- build:js(.) scripts/plugins.js -->
-    <script src="/bower_components/bootstrap/js/affix.js"></script>
-    <script src="/bower_components/bootstrap/js/alert.js"></script>
-    <script src="/bower_components/bootstrap/js/dropdown.js"></script>
-    <script src="/bower_components/bootstrap/js/tooltip.js"></script>
-    <script src="/bower_components/bootstrap/js/modal.js"></script>
-    <script src="/bower_components/bootstrap/js/transition.js"></script>
-    <script src="/bower_components/bootstrap/js/button.js"></script>
-    <script src="/bower_components/bootstrap/js/popover.js"></script>
-    <script src="/bower_components/bootstrap/js/carousel.js"></script>
-    <script src="/bower_components/bootstrap/js/scrollspy.js"></script>
-    <script src="/bower_components/bootstrap/js/collapse.js"></script>
-    <script src="/bower_components/bootstrap/js/tab.js"></script>
-    <!-- endbuild -->
+      <!-- build:js(.) scripts/plugins.js -->
+      <script src="/bower_components/bootstrap/js/affix.js"></script>
+      <script src="/bower_components/bootstrap/js/alert.js"></script>
+      <script src="/bower_components/bootstrap/js/dropdown.js"></script>
+      <script src="/bower_components/bootstrap/js/tooltip.js"></script>
+      <script src="/bower_components/bootstrap/js/modal.js"></script>
+      <script src="/bower_components/bootstrap/js/transition.js"></script>
+      <script src="/bower_components/bootstrap/js/button.js"></script>
+      <script src="/bower_components/bootstrap/js/popover.js"></script>
+      <script src="/bower_components/bootstrap/js/carousel.js"></script>
+      <script src="/bower_components/bootstrap/js/scrollspy.js"></script>
+      <script src="/bower_components/bootstrap/js/collapse.js"></script>
+      <script src="/bower_components/bootstrap/js/tab.js"></script>
+      <!-- endbuild -->
 
 
-    <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
-    <script src="scripts/jquery.titlealert.js"></script>
-    <!-- endbuild -->
+      <!-- build:js scripts/main.js -->
+      <script src="scripts/main.js"></script>
+      <script src="scripts/jquery.titlealert.js"></script>
+      <!-- endbuild -->
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
+      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+      <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
       e=o.createElement(i);r=o.getElementsByTagName(i)[0];
       e.src='https://www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
-  </body>
-</html>
+      </script>
+    </body>
+    </html>
