@@ -7,8 +7,8 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var port = process.env.PORT || 8080;
-console.log("Listening on port " + process.env.PORT || 8080);
-server.listen(process.env.PORT || 8080);
+console.log("Listening on port " + port);
+server.listen(port);
 
 // routing
 app.set('views', './app');
@@ -67,6 +67,12 @@ io.sockets.on('connection', function (socket) {
 		var index = takenrooms.indexOf(socket.room);
 		if (index > -1) {
 		    takenrooms.splice(index, 1);
+		}else
+		{
+			var index = freerooms.indexOf(socket.room);
+			if (index > -1) {
+			    freerooms.splice(index, 1);
+			}
 		}
 	});
 	//When the user disconnects
@@ -79,7 +85,14 @@ io.sockets.on('connection', function (socket) {
 		var index = takenrooms.indexOf(socket.room);
 		if (index > -1) {
 		    takenrooms.splice(index, 1);
+		}else
+		{
+			var index = freerooms.indexOf(socket.room);
+			if (index > -1) {
+			    freerooms.splice(index, 1);
+			}
 		}
+
 	});
 	socket.on('sendsystemmessage', function(message)
 	{

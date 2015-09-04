@@ -4,6 +4,78 @@
   color: #000;
   padding: 0.2em 0;
 }
+/* Bubble code */
+.bubble{
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    box-shadow: 0 0 6px #B2B2B2;
+    display: inline-block;
+    padding: 10px 18px;
+    position: relative;
+    max-width: 85%;
+    margin-top: 15px;
+    clear:both;
+    vertical-align: top;
+}
+
+.bubble::before {
+    background-color: #F2F2F2;
+    content: "\00a0";
+    display: block;
+    height: 16px;
+    position: absolute;
+    top: 11px;
+    transform:             rotate( 29deg ) skew( -35deg );
+        -moz-transform:    rotate( 29deg ) skew( -35deg );
+        -ms-transform:     rotate( 29deg ) skew( -35deg );
+        -o-transform:      rotate( 29deg ) skew( -35deg );
+        -webkit-transform: rotate( 29deg ) skew( -35deg );
+    width:  20px;
+}
+
+.helpbubble{
+    background-color: #fb8521;
+    color:white;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 0 6px #B2B2B2;
+    padding: 10px 18px;
+    position: relative;
+    width: 450px;
+    margin-top: 15px;
+    vertical-align: top;
+}
+.quotebubble{
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    box-shadow: 0 0 6px #B2B2B2;
+    padding: 10px 18px;
+    position: relative;
+    width: 95%;
+    margin-top: 15px;
+    clear:both;
+    vertical-align: top;
+}
+
+.them {
+    float: left;
+    margin: 5px 45px 5px 20px;
+}
+
+.them::before {
+    box-shadow: -2px 2px 2px 0 rgba( 178, 178, 178, .4 );
+    left: -9px;
+}
+
+.user {
+    float: right;
+    margin: 5px 20px 5px 45px;
+}
+
+.user::before {
+    box-shadow: 2px -2px 2px 0 rgba( 178, 178, 178, .4 );
+    right: -9px;
+}
 
 /* Space out content a bit */
 body {
@@ -16,15 +88,39 @@ html
   height: 100%;
   width: 100%;
 }
-
+.quotesblock
+{
+  width:15%;
+  float:left;
+  clear:both;
+  margin-top: 5px;
+  margin-bottom: 1px;
+  height: calc(95% - 60px);
+  overflow-y:scroll;
+}
+.nolink:hover
+{
+  color: #fb8521; /* blue colors for links too */
+  text-decoration: none; /* no underline */
+}
+.nolink
+{
+  color: #fb8521; /* blue colors for links too */
+  text-decoration: none; /* no underline */
+}
 .chatgoogleadvert
 {
   width: 50%;
-  height: 85px;
+  height:70px;
   margin: 0 auto;
-  display:none;
 }
-
+.chatheader
+{
+  display:flex;
+  flex-direction:row;
+  width:100%;
+  height:80px;
+}
 .mainchatbrand
 {
   font-size: 5em;
@@ -33,7 +129,6 @@ html
   margin-top: -10px;
   margin-left: 10px;
   float: left;
-  clear: both;
   font-family: 'Cookie', cursive;
 }
 #afterchat
@@ -55,20 +150,18 @@ html
   display:none;
   text-align: center;
 }
-.quotesprechat
-{
-  margin: 0 auto;
-  width: 40%;
-}
 .prechatlist
 {
+  list-style-type: none;
   text-align: left;
+  padding-left: 20px;
 }
 .chatbrand
 {
   font-size: 4em;
   font-weight: 400;
   color:#fb8521;
+  flex-grow: 1;
   margin:0 auto;
   font-family: 'Roboto', sans-serif;
 }
@@ -83,8 +176,18 @@ html
 }
 .messageinput
 {
-  margin: 0 auto;
   width: 100%;
+}
+#messagetextbox
+{
+  width:84%;
+  margin:0 auto;
+  float:left;
+}
+#endchatbutton
+{
+  max-width: 15%;
+  float:right;
 }
 .submitbuttongroup
 {
@@ -136,10 +239,8 @@ html
 {
   position:relative;
   width: 70%;
-  margin: 0 auto;
+  margin-left: 15%;
   height: 87%;
-  margin-top: 15px;
-  background-color: white;
 }
 .chatroom .chatfooter
 {
@@ -160,7 +261,7 @@ html
 {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  font-size: 1.150em;
+  font-size: 1.5em;
   max-width: 450px;
   margin: 0 auto;
   margin-bottom: 3%;
@@ -181,7 +282,7 @@ html
 {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  font-size: 1.150em;
+  font-size: 1.5em;
   margin-bottom: 10px;
   max-width: 450px;
   margin: 0 auto;
@@ -221,12 +322,12 @@ html
   flex-grow:1;
 }
 
-@media only screen and (max-device-width: 700px) {
+@media only screen and (max-width: 700px) {
   .brand
   {
     margin-top: -30%;
   }
-    .chatbrand
+  .chatbrand
   {
    display: none;
   }
