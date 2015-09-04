@@ -97,7 +97,7 @@ html
   clear:both;
   margin-top: 5px;
   margin-bottom: 1px;
-  height: calc(95% - 60px);
+  height: b;
   overflow-y:scroll;
 }
 .nolink:hover
@@ -374,7 +374,6 @@ html
   {
     height: 100%;
     width:100%;
-    background-color: blue;
   }
   .chatheader
   {
@@ -417,6 +416,123 @@ html
     height: 87%;
     padding-left: 0px;
   }
+  #afterchat{
+    margin-top: 60px;
+  }
+  #prechat{
+    margin-top: 60px;
+  }
+  #chat{
+    margin-top: 4b0px;
+  }
+  .afterchatinfo
+  {
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 100%;
+  }
+
+  .usernameinput
+  {
+    width: 100%;
+  }
+  .submitbuttongroup
+  {
+    width:100%;
+  }
+
+
+}
+@media only screen and (max-width: 400px) {
+
+
+ /* Frontpage */
+  .brand
+  {
+    margin-top: -30%;
+    font-size: 4em;
+  }
+  .subtitle
+  {
+    width:100%;
+    font-size: 1em;
+  }
+  .socialinfo
+  {
+    font-size: 1em;
+  }
+  #advertbox
+  {
+    height: 9%;
+    margin-bottom: 0px;
+    width: 100%;
+  }
+  #titlebox
+  {
+    margin-top: 20px;
+    margin-bottom: -20px;
+    height: 80%;
+  }
+  .adsbygoogle
+  {
+    height:60px !important;
+  }
+  /* Chatpage */
+  .mainchatbrand
+  {
+   display: none;
+  }
+  .quotesblock
+  {
+    display:none;
+  }
+   .chatgoogleadvert
+  {
+    height:60px;
+    width:100%;
+  }
+  .chatheader
+  {
+    display:block;
+    width:100%;
+    height: 60px;
+  }
+  #messagetextbox
+  {
+    width:67%;
+  }
+  #messagesendbutton
+  {
+    float:right;
+    display:block;
+    max-width:15%;
+  }
+  #endchatbutton
+  {
+    float:left;
+    max-width: 20%;
+  }
+  .submitbuttongroup
+  {
+    width:100%;
+  }
+  .chatsubtitle
+  {
+    width:100%;
+  }
+  .chatbrand
+  {
+    margin-top: 60px;
+    font-size: 2em;
+  }
+  .chatroom
+  {
+    width:100%;
+    margin-top: 40px;
+    margin-left: 0px;
+    height: calc(100% - 105px);
+    padding-left: 0px;
+  }
   #chat{
     padding-left: 0px;
   }
@@ -445,4 +561,6 @@ html
   }
 
 
-}
+
+  }
+
