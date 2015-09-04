@@ -94,7 +94,7 @@ html
 {
   width:85%;
   margin-left: 15%;
-  height:100%;
+  height: calc(100% - 100px);
 }
 .quotesblock
 {
@@ -103,7 +103,7 @@ html
   clear:both;
   margin-top: 5px;
   margin-bottom: 1px;
-  height: b;
+  height: calc(100% - 100px);
   overflow-y:scroll;
 }
 .nolink:hover
@@ -248,7 +248,7 @@ html
   position:relative;
   max-width: 1300px;
   margin: 0 auto;
-  height: 87%;
+  height: 100%;
 }
 .chatroom .chatfooter
 {
