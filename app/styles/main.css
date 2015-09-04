@@ -90,6 +90,12 @@ html
   height: 100%;
   width: 100%;
 }
+.chatroomholder
+{
+  width:85%;
+  margin-left: 15%;
+  height:100%;
+}
 .quotesblock
 {
   width:15%;
@@ -241,8 +247,7 @@ html
 {
   position:relative;
   max-width: 1300px;
-  margin-right: 10px;
-  margin-left: 15%;
+  margin: 0 auto;
   height: 87%;
 }
 .chatroom .chatfooter
@@ -530,7 +535,7 @@ html
     width:100%;
     margin-top: 40px;
     margin-left: 0px;
-    height: calc(100% - 105px);
+    height: calc(100% - 105bpx);
     padding-left: 0px;
   }
   #chat{
