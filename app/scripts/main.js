@@ -1,6 +1,6 @@
 //This is the main css for the index.html
-  //var socket = io.connect(window.location.hostname);
-  var socket = io.connect('localhost:8080');
+  var socket = io.connect(window.location.hostname);
+  //var socket = io.connect('localhost:8080');
   //On connect it will start trying to set up a room for the user.
   socket.on('connect', function(){
 	//Called when first gets contection to server
