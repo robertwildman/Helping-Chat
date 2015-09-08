@@ -24,7 +24,7 @@
 	    duration:4000,
 	    interval:700
 	});
-     $('<li class = "bubble them"></li>').html(data).appendTo('#chat');
+     $("#chat").append($("<li>").addClass('bubble them').text(data));
      //Makes sure the scroll keeps working.
      document.getElementById("chat").scrollTop = document.getElementById("chat").scrollHeight;
   });
@@ -57,7 +57,7 @@
   socket.on('systemmessage', function(message){
     //Will display the server message to the user.
     //Server messages are place in the middle of the chat.
-    $('<li class="helpbubble"></li>').html(message).appendTo('#chat');
+    $("#chat").append($("<li>").addClass('helpbubble').text(message));
      //Makes sure the scroll keeps working.
      document.getElementById("chat").scrollTop = document.getElementById("chat").scrollHeight;
   });
@@ -109,7 +109,7 @@
 		//Will now display post infomation to the server
         var message = $('#messagetextbox').val();
         socket.emit('sendmessage',message);
-        $('<li class="bubble user"></li>').html(message).appendTo('#chat');
+        $("#chat").append($("<li>").addClass('bubble user').text(message));
      	//Makes sure the scroll keeps working.
      	document.getElementById("chat").scrollTop = document.getElementById("chat").scrollHeight;
         $('#messagetextbox').val('');
@@ -120,7 +120,7 @@ $('#messagetextbox').keypress(function(e) {
         $(this).blur();
         var message = $(this).val();
         socket.emit('sendmessage',message);
-        $('<li class="bubble user"></li>').html(message).appendTo('#chat');
+      $("#chat").append($("<li>").addClass('bubble user').text(message));
      	//Makes sure the scroll keeps working.
      	document.getElementById("chat").scrollTop = document.getElementById("chat").scrollHeight;
         $(this).val('');
